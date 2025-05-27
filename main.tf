@@ -19,7 +19,6 @@ data "google_compute_image" "ubuntu" {
 resource "google_compute_instance" "web" {
   name         = "web"
   machine_type = "e2-micro"
-}
   
   boot_disk {
     initialize_params {
@@ -27,7 +26,7 @@ resource "google_compute_instance" "web" {
     }
   }
   network_interface {
-   subnetwork = "default"
+   subnetwork = "app"
    access_config {
       # Leave empty for dynamic public IP
     }
